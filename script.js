@@ -4,6 +4,39 @@ let gridLength = 16;
 
 addGrid(gridLength);
 
+const gridSquares = document.querySelectorAll('.grid-square');
+gridSquares.forEach((square) => {
+  square.addEventListener('mouseover', changeSquareColor);
+});
+
+// FUNCTIONS
+
+function changeSquareColor(e) {
+  const square = e.target;
+  let color = square.style.backgroundColor;
+
+  if (color) {
+    let brightness = getBrightness(square);
+
+    if (brightness) {
+      setBrightness(square, brightness - 10);
+    }
+  } else {
+    square.style.backgroundColor = getRandomRGB();
+  }
+}
+
+function getBrightness(square) {
+  const regEx = /\d+/;
+  const brightness = square.style.filter.match(regEx);
+  brightness = +brightness.toString();
+  return brightness;
+}
+
+function setBrightness(square, brightness) {
+  square.style.filter = `brightness(${brightness}%)`;
+}
+
 function getRandomRGB() {
   getRandomRGBComponent = () => Math.floor(Math.random() * 256);
   const red = getRandomRGBComponent();
@@ -25,6 +58,7 @@ function addGrid(gridLength) {
       square.classList.add('grid-square');
       square.style.setProperty('width', squareSize);
       square.style.setProperty('height', squareSize);
+      square.style.setProperty('filter', 'brightness(100%)');
       row.appendChild(square);
     }
   }
