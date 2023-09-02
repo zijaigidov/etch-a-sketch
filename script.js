@@ -4,6 +4,14 @@ let gridLength = 16;
 
 addGrid(gridLength);
 
+function getRandomRGB() {
+  getRandomRGBComponent = () => Math.floor(Math.random() * 256);
+  const red = getRandomRGBComponent();
+  const green = getRandomRGBComponent();
+  const blue = getRandomRGBComponent();
+  return `rgb(${red}, ${green}, ${blue})`;
+}
+
 function addGrid(gridLength) {
   const squareSize = `${parseInt(GRID_SIZE) / gridLength}px`;
 
