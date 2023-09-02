@@ -3,3 +3,22 @@
   padding: 0;
   margin: 0;
 }
+
+#grid-container,
+#grid,
+.grid-row {
+  display: flex;
+}
+
+#grid-container {
+  justify-content: center;
+}
+
+#grid {
+  flex-direction: column;
+}
+
+#grid,
+.grid-square {
+  border: 1px solid black;
+}
