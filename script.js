@@ -54,12 +54,16 @@ function addGrid(gridLength) {
     grid.appendChild(row);
 
     for (let j = 0; j < gridLength; j++) {
-      const square = document.createElement('div');
-      square.classList.add('grid-square');
-      square.style.setProperty('width', squareSize);
-      square.style.setProperty('height', squareSize);
-      square.style.setProperty('filter', 'brightness(100%)');
-      row.appendChild(square);
+      addGridSquare(row, squareSize);
     }
   }
+}
+
+function addGridSquare(row, squareSize) {
+  const square = document.createElement('div');
+  square.classList.add('grid-square');
+  square.style.setProperty('width', squareSize);
+  square.style.setProperty('height', squareSize);
+  square.style.setProperty('filter', 'brightness(100%)');
+  row.appendChild(square);
 }
