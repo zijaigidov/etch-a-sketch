@@ -16,7 +16,7 @@ function changeSquareColor(e) {
   let color = square.style.backgroundColor;
 
   if (color) {
-    let brightness = getBrightness(square);
+    const brightness = getBrightness(square);
 
     if (brightness) {
       setBrightness(square, brightness - 10);
@@ -28,7 +28,7 @@ function changeSquareColor(e) {
 
 function getBrightness(square) {
   const regEx = /\d+/;
-  const brightness = square.style.filter.match(regEx);
+  let brightness = square.style.filter.match(regEx);
   brightness = +brightness.toString();
   return brightness;
 }
