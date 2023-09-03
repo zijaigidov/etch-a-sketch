@@ -1,3 +1,4 @@
+const resizeBtn = document.getElementById('resize-btn');
 const grid = document.getElementById('grid');
 const GRID_SIZE = '700px';
 let gridLength = 16;
