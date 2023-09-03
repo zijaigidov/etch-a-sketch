@@ -5,15 +5,12 @@ let gridLength = 16;
 
 addGrid(gridLength);
 
-const gridSquares = document.querySelectorAll('.grid-square');
-gridSquares.forEach((square) => {
-  square.addEventListener('mouseover', changeSquareColor);
-});
-
 resizeBtn.addEventListener('click', () => {
   const input = getInput();
   if (validateInput(input)) {
     gridLength = input;
+    removeGrid();
+    addGrid(gridLength);
   }
 });
 
@@ -65,6 +62,10 @@ function addGrid(gridLength) {
       addGridSquare(row, squareSize);
     }
   }
+  const gridSquares = document.querySelectorAll('.grid-square');
+  gridSquares.forEach((square) => {
+    square.addEventListener('mouseover', changeSquareColor);
+  });
 }
 
 function addGridSquare(row, squareSize) {
@@ -96,4 +97,8 @@ function getInput() {
     gridLength,
   );
   return input;
+}
+
+function removeGrid() {
+  grid.replaceChildren();
 }
