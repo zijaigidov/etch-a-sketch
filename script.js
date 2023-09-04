@@ -1,3 +1,5 @@
+const sizeSlider = document.getElementById('size-slider');
+const sizeValue = document.getElementById('size-value');
 const clearBtn = document.getElementById('clear-btn');
 const grid = document.getElementById('grid');
 const GRID_SIZE = '700px';
@@ -5,6 +7,9 @@ let gridSquares;
 let gridLength = 16;
 
 addGrid(gridLength);
+
+sizeSlider.addEventListener('mousemove', updateSizeValue);
+sizeSlider.addEventListener('change', changeGridSize);
 
 clearBtn.addEventListener('click', clearGrid);
 
@@ -69,6 +74,23 @@ function addGridSquare(row, squareSize) {
   square.style.setProperty('height', squareSize);
   square.style.setProperty('filter', 'brightness(100%)');
   row.appendChild(square);
+}
+
+function updateSizeValue() {
+  const length = getSliderValue();
+  sizeValue.textContent = `${length}x${length}`;
+}
+
+function getSliderValue() {
+  let length = sizeSlider.value;
+  length = Math.floor(length);
+  return length;
+}
+
+function changeGridSize() {
+  gridLength = getSliderValue();
+  removeGrid();
+  addGrid(gridLength);
 }
 
 function removeGrid() {

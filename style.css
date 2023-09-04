@@ -20,7 +20,8 @@ body {
 }
 
 body,
-#btn-container,
+#controls,
+#slider-container,
 #grid-container,
 #grid,
 .grid-row {
@@ -35,8 +36,16 @@ body,
   border-radius: 16px;
 }
 
-#btn-container {
+#controls {
+  align-items: center;
   gap: 12px;
+}
+
+#slider-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: white;
 }
 
 .btn {
