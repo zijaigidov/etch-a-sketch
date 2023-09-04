@@ -1,4 +1,3 @@
-const resizeBtn = document.getElementById('resize-btn');
 const clearBtn = document.getElementById('clear-btn');
 const grid = document.getElementById('grid');
 const GRID_SIZE = '700px';
@@ -8,15 +7,6 @@ let gridLength = 16;
 addGrid(gridLength);
 
 clearBtn.addEventListener('click', clearGrid);
-
-resizeBtn.addEventListener('click', () => {
-  const input = getInput();
-  if (validateInput(input)) {
-    gridLength = input;
-    removeGrid();
-    addGrid(gridLength);
-  }
-});
 
 // FUNCTIONS
 
@@ -79,28 +69,6 @@ function addGridSquare(row, squareSize) {
   square.style.setProperty('height', squareSize);
   square.style.setProperty('filter', 'brightness(100%)');
   row.appendChild(square);
-}
-
-function validateInput(input) {
-  if (input === null || input === '') return false;
-  input = +input;
-  if (!Number.isInteger(input) || input <= 0) {
-    alert('Length has to be a positive whole number.');
-    return false;
-  }
-  if (input > 100) {
-    alert('Length has to be less than 100.');
-    return false;
-  }
-  return true;
-}
-
-function getInput() {
-  const input = prompt(
-    `Enter new grid length (grid is currently ${gridLength} by ${gridLength} squares)`,
-    gridLength,
-  );
-  return input;
 }
 
 function removeGrid() {
