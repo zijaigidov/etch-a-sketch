@@ -1,9 +1,13 @@
 const resizeBtn = document.getElementById('resize-btn');
+const clearBtn = document.getElementById('clear-btn');
 const grid = document.getElementById('grid');
 const GRID_SIZE = '700px';
+let gridSquares;
 let gridLength = 16;
 
 addGrid(gridLength);
+
+clearBtn.addEventListener('click', clearGrid);
 
 resizeBtn.addEventListener('click', () => {
   const input = getInput();
@@ -62,7 +66,7 @@ function addGrid(gridLength) {
       addGridSquare(row, squareSize);
     }
   }
-  const gridSquares = document.querySelectorAll('.grid-square');
+  gridSquares = document.querySelectorAll('.grid-square');
   gridSquares.forEach((square) => {
     square.addEventListener('mouseover', changeSquareColor);
   });
@@ -101,4 +105,11 @@ function getInput() {
 
 function removeGrid() {
   grid.replaceChildren();
+}
+
+function clearGrid() {
+  gridSquares.forEach((square) => {
+    square.style.backgroundColor = '';
+    square.style.filter = 'brightness(100%)';
+  });
 }
