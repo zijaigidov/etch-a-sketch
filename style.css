@@ -14,21 +14,25 @@ body,
 #slider-container,
 #grid-container,
 #grid,
-.grid-row {
+.grid-row,
+#footer,
+#footer a {
   display: flex;
 }
 
 body,
 #controls,
 #slider-container,
-#grid {
+#grid,
+#footer {
   flex-direction: column;
 }
 
 body,
 #main,
 #controls,
-#slider-container {
+#slider-container,
+#footer {
   align-items: center;
 }
 
@@ -98,4 +102,17 @@ body {
 
 .btn:hover {
   background-color: rgb(230, 230, 230);
+}
+
+/* FOOTER */
+#footer {
+  margin: auto 0 32px 0;
+}
+
+#footer a {
+  gap: 6px;
+}
+
+#github-icon {
+  font-size: 24px;
 }

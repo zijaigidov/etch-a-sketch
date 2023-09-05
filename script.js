@@ -1,5 +1,5 @@
 const grid = document.getElementById('grid');
-const GRID_SIZE = '700px';
+const GRID_SIZE = '625px';
 let gridSquares;
 let gridLength = 16;
 let isGridLinesToggled = true;
