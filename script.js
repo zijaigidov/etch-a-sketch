@@ -5,6 +5,7 @@ const toggleBtn = document.getElementById('toggle-btn');
 const grid = document.getElementById('grid');
 const GRID_SIZE = '700px';
 let gridSquares;
+let isGridLinesToggled = true;
 let gridLength = 16;
 
 addGrid(gridLength);
@@ -71,6 +72,7 @@ function addGrid(gridLength) {
 function addGridSquare(row, squareSize) {
   const square = document.createElement('div');
   square.classList.add('grid-square');
+  if (isGridLinesToggled) square.classList.add('grid-line');
   square.style.setProperty('width', squareSize);
   square.style.setProperty('height', squareSize);
   square.style.setProperty('filter', 'brightness(100%)');
@@ -102,6 +104,7 @@ function toggleGridLines() {
   gridSquares.forEach((square) => {
     square.classList.toggle('grid-line');
   });
+  isGridLinesToggled = !isGridLinesToggled;
 }
 
 function clearGrid() {
