@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+/* SHARED STYLES */
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-}
-
-html {
-  font-family: 'Poppins', sans-serif;
 }
 
 body,
@@ -34,15 +32,15 @@ body,
   align-items: center;
 }
 
+html {
+  font-family: 'Poppins', sans-serif;
+}
+
 body {
   gap: 48px;
   height: 100vh;
   background: linear-gradient(to top right, red, blue);
   padding-top: 32px;
-}
-
-#main {
-  gap: 80px;
 }
 
 #page-heading {
@@ -52,6 +50,12 @@ body {
   padding: 6px 24px;
   border-radius: 16px;
 }
+
+#main {
+  gap: 80px;
+}
+
+/* GRID */
 
 #grid-container {
   justify-content: center;
@@ -69,6 +73,8 @@ body {
 .grid-line {
   border: 1px solid black;
 }
+
+/* CONTROLS */
 
 #controls {
   gap: 12px;
