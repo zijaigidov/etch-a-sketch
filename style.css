@@ -10,22 +10,39 @@ html {
   font-family: 'Poppins', sans-serif;
 }
 
-body {
-  flex-direction: column;
-  align-items: center;
-  gap: 24px;
-  height: 100vh;
-  background: linear-gradient(to top right, red, blue);
-  padding-top: 24px;
-}
-
 body,
+#main,
 #controls,
 #slider-container,
 #grid-container,
 #grid,
 .grid-row {
   display: flex;
+}
+
+body,
+#controls,
+#slider-container,
+#grid {
+  flex-direction: column;
+}
+
+body,
+#main,
+#controls,
+#slider-container {
+  align-items: center;
+}
+
+body {
+  gap: 48px;
+  height: 100vh;
+  background: linear-gradient(to top right, red, blue);
+  padding-top: 32px;
+}
+
+#main {
+  gap: 80px;
 }
 
 #page-heading {
@@ -36,14 +53,28 @@ body,
   border-radius: 16px;
 }
 
+#grid-container {
+  justify-content: center;
+  background: linear-gradient(to bottom left, red, blue);
+  box-shadow: 0px 0px 8px black;
+  padding: 16px;
+  border-radius: 8px;
+}
+
+#grid {
+  background: rgb(256, 256, 256);
+}
+
+#grid,
+.grid-line {
+  border: 1px solid black;
+}
+
 #controls {
-  align-items: center;
   gap: 12px;
 }
 
 #slider-container {
-  flex-direction: column;
-  align-items: center;
   gap: 8px;
   color: white;
 }
@@ -61,22 +92,4 @@ body,
 
 .btn:hover {
   background-color: rgb(230, 230, 230);
-}
-
-#grid-container {
-  justify-content: center;
-  background: linear-gradient(to bottom left, red, blue);
-  box-shadow: 0px 0px 8px black;
-  padding: 16px;
-  border-radius: 8px;
-}
-
-#grid {
-  flex-direction: column;
-  background: rgb(256, 256, 256);
-}
-
-#grid,
-.grid-line {
-  border: 1px solid black;
 }

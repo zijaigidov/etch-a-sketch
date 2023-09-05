@@ -10,27 +10,29 @@
   </head>
   <body>
     <h1 id="page-heading">etch-a-sketch</h1>
-    <div id="controls">
-      <div id="slider-container">
-        <label for="size-slider"
-          >Grid size: <span id="size-value">16x16</span></label
-        >
-        <input
-          id="size-slider"
-          type="range"
-          min="1"
-          max="100"
-          value="16"
-          step="any"
-        />
+    <div id="main">
+      <div id="controls">
+        <div id="slider-container">
+          <label for="size-slider"
+            >Grid size: <span id="size-value">16x16</span></label
+          >
+          <input
+            id="size-slider"
+            type="range"
+            min="1"
+            max="100"
+            value="16"
+            step="any"
+          />
+        </div>
+        <button id="toggle-btn" class="btn" type="button">
+          Toggle grid lines
+        </button>
+        <button id="clear-btn" class="btn" type="button">Clear</button>
       </div>
-      <button id="toggle-btn" class="btn" type="button">
-        Toggle grid lines
-      </button>
-      <button id="clear-btn" class="btn" type="button">Clear</button>
-    </div>
-    <div id="grid-container">
-      <div id="grid"></div>
+      <div id="grid-container">
+        <div id="grid"></div>
+      </div>
     </div>
   </body>
 </html>
