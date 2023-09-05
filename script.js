@@ -1,6 +1,7 @@
 const sizeSlider = document.getElementById('size-slider');
 const sizeValue = document.getElementById('size-value');
 const clearBtn = document.getElementById('clear-btn');
+const toggleBtn = document.getElementById('toggle-btn');
 const grid = document.getElementById('grid');
 const GRID_SIZE = '700px';
 let gridSquares;
@@ -10,7 +11,7 @@ addGrid(gridLength);
 
 sizeSlider.addEventListener('mousemove', updateSizeValue);
 sizeSlider.addEventListener('change', changeGridSize);
-
+toggleBtn.addEventListener('click', toggleGridLines);
 clearBtn.addEventListener('click', clearGrid);
 
 // FUNCTIONS
@@ -95,6 +96,12 @@ function changeGridSize() {
 
 function removeGrid() {
   grid.replaceChildren();
+}
+
+function toggleGridLines() {
+  gridSquares.forEach((square) => {
+    square.classList.toggle('grid-line');
+  });
 }
 
 function clearGrid() {
